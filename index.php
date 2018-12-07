@@ -5,6 +5,7 @@ include 'mvc/controller/controllSession.php';
 $var1 = $_SERVER['PHP_SELF'];
 echo $var1;
 
+
 ?>
 
 
@@ -35,5 +36,11 @@ echo $var1;
 	include 'mvc/view/footer.php';
 	include 'lib/linker_files/linkerJs.php'
 	?>
+
+
+
+	<!-- <script>
+		window.history.pushState("object or string", "Title", "http://localhost/webtech_project/Webtech_Project_MVC/index.php");
+	</script> -->
 </body>
 </html>
