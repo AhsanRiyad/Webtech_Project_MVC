@@ -2,7 +2,13 @@
 $loginStatusVar1 = 'loginPage';
 $loginStatusVar2 = 'UserInfo';
 include 'mvc/controller/controllSession.php';
+$var1 = $_SERVER['PHP_SELF'];
+echo $var1;
+
 ?>
+
+
+
 
 <?php 
  ?>
