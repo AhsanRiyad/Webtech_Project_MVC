@@ -5,6 +5,8 @@ include 'mvc/controller/controllSession.php';
 $var1 = $_SERVER['PHP_SELF'];
 echo $var1;
 
+echo $_SERVER['REDIRECT_URL'];
+
 
 ?>
 
