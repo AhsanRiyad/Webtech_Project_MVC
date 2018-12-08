@@ -14,7 +14,7 @@
 					?>
 
 
-					<div class="col-xl-2 col-6  mt-xl-0 mt-3" >
+					<div class="col-xl-2 col-6  mt-xl-2 mt-3" >
 						<div onclick="location.href='product_details.php';" class="w_p bg-white ">
 							<img class="img-fluid" src="lib/img/cat1.jpg" alt="">
 
