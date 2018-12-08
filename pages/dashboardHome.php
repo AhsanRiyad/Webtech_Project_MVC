@@ -1,5 +1,5 @@
 <?php 
-$pageName = 'dashboard';
+$pageName = 'dashboardHome';
 $pageCategory = 'visibleToRegistered';
 include '../mvc/controller/controllerRootPath.php';
 $loginStatusVar1 = 'loginPage';

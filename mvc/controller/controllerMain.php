@@ -29,9 +29,9 @@ if($pageCategory=='visibleToRegistered')
 {
 include (APP_ROOT.'mvc/controller/controllSessionDashBoard.php');
 include APP_ROOT.'mvc/view/viewHeaderDashBoard.php';
-if($pageName == 'dashboard')
+if($pageName == 'dashboardHome')
 {
-	include APP_ROOT.'mvc/controller/controllerDashBoard.php';
+	include APP_ROOT.'mvc/controller/controllerHomeDashBoard.php';
 }
 }
 ?>

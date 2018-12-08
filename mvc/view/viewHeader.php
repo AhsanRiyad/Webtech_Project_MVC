@@ -2,6 +2,7 @@
 $logoSrc = $rootAdress."lib/img/logo.png";
 $loginUrl = $rootAdress."pages/login.php";
 $registrationUrl = $rootAdress."pages/reg.php";
+$dashBoardUrl = $rootAdress."pages/dashboardHome.php";
 ?>
 
 
@@ -34,7 +35,7 @@ $registrationUrl = $rootAdress."pages/reg.php";
               </form> 
             </div>
             <div class="col-lg-1  col-3 offset-1 mt-3 mb-3 mb-lg-0 mt-lg-0 offset-lg-0 d-flex justify-content-center align-self-lg-center"><a href="<?php if($loginStatus == true){
-              echo 'admin_home.php';
+              echo $dashBoardUrl;
             }
             else{
               echo $loginUrl;
