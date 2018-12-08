@@ -13,5 +13,9 @@ if($pageName == 'login')
 {
 	include APP_ROOT.'mvc/controller/controllerLogin.php';
 }
+if($pageName == 'registration')
+{
+	include APP_ROOT.'mvc/controller/controllerReg.php';
+}
 include APP_ROOT.'lib/linker_files/footerAllTogether.php';
 ?>
