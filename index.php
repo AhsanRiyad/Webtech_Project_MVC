@@ -1,46 +1,31 @@
 <?php 
+include 'mvc/controller/controllerRootPath.php';
+echo APP_ROOT.'mvc/controller/controllSession.php';
 $loginStatusVar1 = 'loginPage';
 $loginStatusVar2 = 'UserInfo';
-include 'mvc/controller/controllSession.php';
-$var1 = $_SERVER['PHP_SELF'];
-echo $var1;
-
-echo $_SERVER['REDIRECT_URL'];
-
-
+include (APP_ROOT.'mvc/controller/controllSession.php');
 ?>
-
-
-
-
-<?php 
- ?>
-
-
 <!DOCTYPE html>
 <html>
-<head>	
+<head>
 	<?php 
-	include 'lib/linker_files/linkerCss.php';
-	include 'lib/linker_files/title.php';
+	include APP_ROOT.'lib/linker_files/linkerCss.php';
+	include APP_ROOT.'lib/linker_files/title.php';
 	?>
 </head>
 <body>
 	<?php 
-	include 'mvc/view/header.php';
-	include 'mvc/view/carousel.php';
-	include 'mvc/view/Categories.php';
-	include 'mvc/view/CategoriesNewProducts.php';
-	include 'mvc/view/CategoriesBestSellingProducts.php';
-	include 'mvc/view/CategoriesRecommendedProducts.php';
+	include APP_ROOT.'mvc/view/header.php';
+	include APP_ROOT.'mvc/view/carousel.php';
+	include APP_ROOT.'mvc/view/Categories.php';
+	include APP_ROOT.'mvc/view/CategoriesNewProducts.php';
+	include APP_ROOT.'mvc/view/CategoriesBestSellingProducts.php';
+	include APP_ROOT.'mvc/view/CategoriesRecommendedProducts.php';
 	?>
 	<?php 
-	include 'mvc/view/footer.php';
-	include 'lib/linker_files/linkerJs.php'
-	?>
-
-
-
+	include APP_ROOT.'mvc/view/footer.php';
+	include APP_ROOT.'lib/linker_files/linkerJs.php'
+	?>	
 	<!-- <script>
 		window.history.pushState("object or string", "Title", "http://localhost/webtech_project/Webtech_Project_MVC/index.php");
 	</script> -->
