@@ -27,8 +27,8 @@ include APP_ROOT.'lib/linker_files/footerAllTogether.php';
 
 if($pageCategory=='visibleToRegistered')
 {
-include (APP_ROOT.'mvc/controller/controllSessionDashBoard.php');
-include APP_ROOT.'mvc/view/viewHeaderDashBoard.php';
+include (APP_ROOT.'mvc/controller/controllSessionDashboard.php');
+include APP_ROOT.'mvc/view/viewHeaderDashboard.php';
 if($pageName == 'dashboardHome')
 {
 	include APP_ROOT.'mvc/controller/controllerHomeDashBoard.php';

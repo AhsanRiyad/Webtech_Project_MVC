@@ -27,7 +27,7 @@ $logoSrc = $rootAdress."lib/img/logo_dashboard.png";
       <div class=" 
         <?php 
 
-          if($link_status=='admin_home')
+          if($pageName=='dashboardHome')
           {
             echo 'bg-info';
           }
@@ -54,7 +54,7 @@ $logoSrc = $rootAdress."lib/img/logo_dashboard.png";
           <div class="  
           <?php 
 
-          if($link_status=='admin_profile')
+          if($pageName=='dashboardProfile')
           {
             echo 'bg-info';
           }
