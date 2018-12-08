@@ -1,7 +1,7 @@
 <?php 
-
 $logoSrc = $rootAdress."lib/img/logo.png";
-
+$loginUrl = $rootAdress."pages/login.php";
+$registrationUrl = $rootAdress."pages/reg.php";
 ?>
 
 
@@ -37,7 +37,7 @@ $logoSrc = $rootAdress."lib/img/logo.png";
               echo 'admin_home.php';
             }
             else{
-              echo 'login.php';
+              echo $loginUrl;
             } ?>" class="btn btn-success">
             <?php 
             if($loginStatus == true){
@@ -58,7 +58,7 @@ $logoSrc = $rootAdress."lib/img/logo.png";
             }
             else{
               unset($_SESSION['UserInfo']);
-              echo 'reg.php';
+              echo $registrationUrl;
 
             } ?>" class="btn btn-danger">
               <?php 

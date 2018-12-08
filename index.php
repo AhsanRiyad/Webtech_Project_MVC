@@ -1,5 +1,6 @@
 <?php 
 $pageName = 'index';
+$pageCategory = 'visibleToAll';
 include 'mvc/controller/controllerRootPath.php';
 $loginStatusVar1 = 'loginPage';
 $loginStatusVar2 = 'UserInfo';

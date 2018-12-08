@@ -1,6 +1,6 @@
 <?php 
-$pageName = 'login';
-$pageCategory = 'visibleToAll';
+$pageName = 'dashboard';
+$pageCategory = 'visibleToRegistered';
 include '../mvc/controller/controllerRootPath.php';
 $loginStatusVar1 = 'loginPage';
 $loginStatusVar2 = 'UserInfo';
