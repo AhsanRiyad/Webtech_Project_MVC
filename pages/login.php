@@ -1,9 +1,7 @@
 <?php 
-$pageName = 'index';
-include 'mvc/controller/controllerRootPath.php';
+$pageName = 'login';
+include '../mvc/controller/controllerRootPath.php';
 $loginStatusVar1 = 'loginPage';
 $loginStatusVar2 = 'UserInfo';
 include APP_ROOT.'mvc/controller/controllerMain.php';
-echo APP_ROOT;
 ?>
-

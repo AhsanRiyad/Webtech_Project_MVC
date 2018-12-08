@@ -1,9 +1,15 @@
+<?php 
+$logoSrc = APP_ROOT."lib/img/logo.png";
+
+ ?>
+
+
 <div class="container-fluid bg-light">
     <div class="row">
       <div class="col">
         <div class="container">
           <div class="row">
-            <div class="col-lg-2 col-12 justify-content-lg-start d-flex justify-content-center"><a href="index.php"><img src="lib/img/logo.png"></a>
+            <div class="col-lg-2 col-12 justify-content-lg-start d-flex justify-content-center"><a href="index.php"><img src=<?php echo $logoSrc; ?>></a>
             </div>
 
             <div class="col-lg-6 col-12 align-self-lg-center">
@@ -29,7 +35,7 @@
               echo 'admin_home.php';
             }
             else{
-              echo 'login.php';
+              echo 'pages/login.php';
             } ?>" class="btn btn-success">
             <?php 
             if($loginStatus == true){

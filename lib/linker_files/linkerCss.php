@@ -1,8 +1,9 @@
-
 <?php 
-$bootstrapLib = "lib/css/bootstrap.min.css";
-$stylesheet = "lib/css/main.css";
-$fontAwesome = "lib/font-awesome/css/all.css";
+$rootAdress = 'http://localhost/webtech_project/Webtech_Project_MVC/';
+
+$bootstrapLib = $rootAdress."lib/css/bootstrap.min.css";
+$stylesheet =  $rootAdress."lib/css/main.css";
+$fontAwesome = $rootAdress."lib/font-awesome/css/all.css";
 ?>
 
 <!-- bootstrap cdn -->

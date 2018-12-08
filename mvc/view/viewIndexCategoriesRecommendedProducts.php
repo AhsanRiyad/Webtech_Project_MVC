@@ -46,7 +46,7 @@
 					<?php 
 					}
 
-					include 'mvc/view/buttonLoadMore.php';
+					include 'mvc/view/viewIndexButtonLoadMore.php';
 					 ?>
 
 

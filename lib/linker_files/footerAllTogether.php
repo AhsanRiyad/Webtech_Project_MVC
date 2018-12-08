@@ -1,5 +1,5 @@
 <?php 
-	include APP_ROOT.'mvc/view/footer.php';
+	include APP_ROOT.'mvc/view/viewFooter.php';
 	include APP_ROOT.'lib/linker_files/linkerJs.php'
 	?>	
 	<!-- <script>

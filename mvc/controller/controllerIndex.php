@@ -1,11 +1,11 @@
 	<?php 
 	
-	include APP_ROOT.'mvc/view/header.php';
-	include APP_ROOT.'mvc/view/carousel.php';
-	include APP_ROOT.'mvc/view/Categories.php';
-	include APP_ROOT.'mvc/view/CategoriesNewProducts.php';
-	include APP_ROOT.'mvc/view/CategoriesBestSellingProducts.php';
-	include APP_ROOT.'mvc/view/CategoriesRecommendedProducts.php';
+	
+	include APP_ROOT.'mvc/view/viewIndexCarousel.php';
+	include APP_ROOT.'mvc/view/viewIndexCategories.php';
+	include APP_ROOT.'mvc/view/viewIndexCategoriesNewProducts.php';
+	include APP_ROOT.'mvc/view/viewIndexCategoriesBestSellingProducts.php';
+	include APP_ROOT.'mvc/view/viewIndexCategoriesRecommendedProducts.php';
 
 
 	?>
