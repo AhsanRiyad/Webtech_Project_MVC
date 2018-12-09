@@ -72,13 +72,12 @@
 			if(valueEmailCheckedStatus==true && valueMobileNumberCheckedStatus == true)
 			{
 
-				var jsProfileInfo = {
-					'email' : 'valueEmail',
-					'mobileNumber' : 'valueMobileNumber',
-					'dob' : 'valueDob'
-				};
+				jsProfileInfo = { email:valueEmail, mobileNumber:valueMobileNumber, dob: valueDob };
+				
+				jsonStringDbParam = JSON.stringify(jsProfileInfo);
+				
 
-				jsProfileInfo = JSON.stringify(jsProfileInfo);
+				//dbParam = JSON.stringify(jsProfileInfo);
 				//jsProfileInfo = JSON.parse(jsProfileInfo);
 				
 				
@@ -92,7 +91,7 @@
 
 				xhttp.open("POST", "http://localhost/webtech_project/Webtech_Project_MVC/mvc/model/modelDashboardProfileUpdate.php", true);
 				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-				xhttp.send(jsProfileInfo);
+				xhttp.send('x=' + jsonStringDbParam);
 
 
 			}
