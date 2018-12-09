@@ -90,7 +90,7 @@ $logoSrc = $rootAdress."lib/img/logo_dashboard.png";
 
           </div></a>
 
-            <a class="text-white" href="login.php">
+            <a class="text-white" href=<?php echo $loginUrl; ?>>
               <div class="  bg-danger py-2 text-center my-4">
 
                 <i class="fas fa-sign-out-alt"></i>Sign Out

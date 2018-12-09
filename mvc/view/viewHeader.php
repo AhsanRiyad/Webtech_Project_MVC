@@ -1,8 +1,5 @@
 <?php 
 $logoSrc = $rootAdress."lib/img/logo.png";
-$loginUrl = $rootAdress."pages/pagesLogin.php";
-$registrationUrl = $rootAdress."pages/pagesReg.php";
-$dashBoardUrl = $rootAdress."pages/pagesDashboardHome.php";
 ?>
 
 
@@ -35,7 +32,7 @@ $dashBoardUrl = $rootAdress."pages/pagesDashboardHome.php";
               </form> 
             </div>
             <div class="col-lg-1  col-3 offset-1 mt-3 mb-3 mb-lg-0 mt-lg-0 offset-lg-0 d-flex justify-content-center align-self-lg-center"><a href="<?php if($loginStatus == true){
-              echo $dashBoardUrl;
+              echo $dashboardHomeUrl;
             }
             else{
               echo $loginUrl;

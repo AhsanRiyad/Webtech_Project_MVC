@@ -7,7 +7,7 @@ include APP_ROOT.'mvc/controller/controllerPagesUrlList.php';
 
 if($pageCategory=='visibleToAll')
 {
-include (APP_ROOT.'mvc/controller/controllSession.php');
+include (APP_ROOT.'mvc/controller/controllerSession.php');
 include APP_ROOT.'mvc/view/viewHeader.php';
 if($pageName == 'index')
 {	
@@ -28,7 +28,7 @@ include APP_ROOT.'lib/linker_files/footerAllTogether.php';
 
 if($pageCategory=='visibleToRegistered')
 {
-include (APP_ROOT.'mvc/controller/controllSessionDashboard.php');
+include (APP_ROOT.'mvc/controller/controllerSessionDashboard.php');
 include APP_ROOT.'mvc/view/viewHeaderDashboard.php';
 if($pageName == 'dashboardHome')
 {
