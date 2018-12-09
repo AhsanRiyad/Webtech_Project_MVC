@@ -4,10 +4,11 @@ if ($msg == 'successful') {
 
 
 	?>
-	<script type="text/javascript"> window.location.replace("admin_home.php");
-</script>
+	<script type="text/javascript"> 
+		window.location.replace('<?php echo $dashboardHomeUrl; ?>');
+	</script>
 
-<?php 
+	<?php 
 
 }
 else if($msg == 'login failed')

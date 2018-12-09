@@ -72,7 +72,7 @@
 
 							<p class="text-danger h5 mt-2"><i>Not a member yet?</i></p>
 
-							<a href="reg.php"><button type="button" class="btn btn-primary rounded-0 w-100 py-2">Register Here</button></a>
+							<a href=<?php echo $registrationUrl; ?>><button type="button" class="btn btn-primary rounded-0 w-100 py-2">Register Here</button></a>
 
 						</div>
 
