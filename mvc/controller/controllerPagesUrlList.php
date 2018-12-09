@@ -14,6 +14,4 @@ $indexUrl = $rootAdress."index.php";
 //$dashboardHomeUrl = $rootAdress."pages/pagesDashboardHome.php";
 //$loginUrl = $rootAdress."pages/pagesLogin.php";
 
-
-
  ?>

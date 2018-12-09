@@ -4,6 +4,7 @@ $rootAdress = 'http://localhost/webtech_project/Webtech_Project_MVC/';
 $bootstrapLib = $rootAdress."lib/css/bootstrap.min.css";
 $stylesheet =  $rootAdress."lib/css/main.css";
 $fontAwesome = $rootAdress."lib/font-awesome/css/all.css";
+$imageFevicon = $rootAdress."lib/img/fevicon.png";
 ?>
 
 <!-- bootstrap cdn -->
@@ -19,7 +20,7 @@ $fontAwesome = $rootAdress."lib/font-awesome/css/all.css";
   <!-- font awesome on server -->
   <link href=<?= $fontAwesome; ?> rel="stylesheet" type="text/css"/>
   
-  <link rel="icon" href="lib/img/fevicon.png" type="image/gif" sizes="16x16">
+  <link rel="icon" href=<?php echo $imageFevicon; ?> type="image/gif" sizes="16x16">
 
 
    <!-- css custom stylesheet -->
