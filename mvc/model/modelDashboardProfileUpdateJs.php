@@ -1,6 +1,7 @@
 <script>// update profile page disable input and backgroundColor change js;
 	// performed by capturing the object using onclick event
 	var objEmail = $('#idInputEmailUpdateProfileDashboard');
+	var objMobile = $('#idInputMobileUpdateProfileDashboard');
 	function removeDisabled(obj){
 		
 		obj.parentNode.nextSibling.nextElementSibling.disabled = false;
@@ -34,6 +35,24 @@
 				objEmail.prev().removeClass('text-info', 'text-danger');
 				objEmail.prev().addClass('text-success');
 			}
+			var valueMobileNumber = objMobile.val();
+			var valueMobileNumberCheckedStatus = mobileNumberPattern.test(valueMobileNumber);
+
+
+			if(valueMobileNumberCheckedStatus==false)
+			{
+				objMobile.get(0).parentNode.firstElementChild.firstElementChild.textContent = 'Invalid number';
+				objMobile.prev().removeClass('text-info');
+				objMobile.prev().addClass('text-danger');
+
+			}
+			else{
+				objMobile.get(0).parentNode.firstElementChild.firstElementChild.textContent = 'valid';
+				objMobile.prev().removeClass('text-info', 'text-danger');
+				objMobile.prev().addClass('text-success');
+			}
+
+
 
 
 
