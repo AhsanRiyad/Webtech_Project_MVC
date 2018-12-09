@@ -2,6 +2,7 @@
 	// performed by capturing the object using onclick event
 	var objEmail = $('#idInputEmailUpdateProfileDashboard');
 	var objMobile = $('#idInputMobileUpdateProfileDashboard');
+	var objDob = $('#idInputDobUpdateProfileDashboard');
 	function removeDisabled(obj){
 		
 		obj.parentNode.nextSibling.nextElementSibling.disabled = false;
@@ -17,12 +18,22 @@
 	var emailPattern = /^[^0-9.-_][a-z0-9.-_]{3,20}@[a-z]{3,20}\.[a-z]{2,5}/;
 	var mobileNumberPattern = /^\d{11}$/;
 
-	 
+
 	$('document').ready(function(){
 		$('#idButtonUpdateProfileDashboard').click(function(){
 			
+			// validation starts
 			var valueEmail = objEmail.val();
 			var valueEmailCheckedStatus = emailPattern.test(valueEmail);
+
+			var valueMobileNumber = objMobile.val();
+			var valueMobileNumberCheckedStatus = mobileNumberPattern.test(valueMobileNumber);
+
+			var valueDob = objDob.val();
+			
+
+			
+
 			if(valueEmailCheckedStatus==false)
 			{
 				objEmail.get(0).parentNode.firstElementChild.firstElementChild.textContent = 'Invalid email';
@@ -51,16 +62,55 @@
 				objMobile.prev().removeClass('text-info', 'text-danger');
 				objMobile.prev().addClass('text-success');
 			}
+			// validation ends
+
+
+			// ajax and json starts
+			
+
+
+			if(valueEmailCheckedStatus==true && valueMobileNumberCheckedStatus == true)
+			{
+
+				var jsProfileInfo = {
+					email : valueEmail,
+					mobileNumber : valueMobileNumber,
+					dob : valueDob
+				};
+				jsProfileInfo = JSON.stringify(jsProfileInfo);
+				jsProfileInfo = JSON.parse(jsProfileInfo);
+				alert(jsProfileInfo.email);
+				
+				// var xhttp = new XMLHttpRequest();
+				// xhttp.onreadystatechange = function() {
+				// 	if (this.readyState == 4 && this.status == 200) {
+				// 		var msg = this.responseText;
+				// 		alert(msg);
+				// 	}
+				// };
+
+				// xhttp.open("POST", "http://localhost/webtech_project/Webtech_Project_MVC/mvc/model/modelDashboardProfileUpdate.php", true);
+				// xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				// xhttp.send(jsProfileInfo);
+
+
+			}
 
 
 
+
+
+
+
+
+
+			//ajax and json ends
 
 
 		})
 
 
 	});
-
 
 
 </script>
