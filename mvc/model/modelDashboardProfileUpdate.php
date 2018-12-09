@@ -1,8 +1,8 @@
 <?php 
-session_start();
-define('APP_ROOT', "$_SERVER[DOCUMENT_ROOT]/webtech_project/Webtech_Project_MVC/");
-$rootAdress = 'http://localhost/webtech_project/Webtech_Project_MVC/';
-include APP_ROOT.'lib/linker_files/db.php';
+include '../controller/controllerRootPath.php';
+include APP_ROOT.'lib/linker_files/linkerForController.php';
+
+
 
 header("Content-Type: application/json; charset=UTF-8");
 $obj = json_decode($_POST["x"], false);
