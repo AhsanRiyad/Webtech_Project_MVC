@@ -1,7 +1,8 @@
 <?php 
 $logoSrc = $rootAdress."lib/img/logo_dashboard.png";
-
- ?>
+$dashboardHomeUrl = $rootAdress."pages/dashboardHome.php";
+$dashboardProfileUrl = $rootAdress."pages/dashboardProfile.php";
+?>
 
 <!-- navigation bar and search bar starts -->
   <!-- fixed horizontal -->
@@ -23,7 +24,7 @@ $logoSrc = $rootAdress."lib/img/logo_dashboard.png";
 
     
 
-    <a class="text-white" href="admin_home.php">
+    <a class="text-white" href=<?php echo $dashboardHomeUrl; ?>>
       <div class=" 
         <?php 
 
@@ -50,11 +51,11 @@ $logoSrc = $rootAdress."lib/img/logo_dashboard.png";
         </div></a>
 
 
-        <a class="text-light" href="admin_profile.php">
+        <a class="text-light" href=<?php echo $dashboardProfileUrl; ?>>
           <div class="  
           <?php 
 
-          if($pageName=='dashboardProfile')
+          if($pageName=='dashboardProfile' || $pageName=='dashboardProfileUpdate')
           {
             echo 'bg-info';
           }

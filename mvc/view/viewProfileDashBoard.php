@@ -1,3 +1,8 @@
+<?php 
+$profilePic = $rootAdress."lib/img/face.jpg";
+$ProfileUpdateUrl = $rootAdress."pages/dashboardProfileUpdateInfo.php";
+?>
+
 <!-- admin breadcumb and title -->
 
 <div class="container-fluid bg-light mt-0 position-fixed">
@@ -21,7 +26,7 @@
 				<div class="row bg-white mx-1">
 
 					<div class="col-5 mr-0 pr-0 my-2">
-						<img class="rounded img-thumbnail img-fluid" src="img/face.jpg" alt="">
+						<img class="rounded img-thumbnail img-fluid" src=<?php echo $profilePic; ?> alt="">
 						<div class="w-100"></div>
 						
 						
@@ -85,7 +90,7 @@
 
 
 					<div class="col-10 mx-0 px-0 ">
-						<a href="admin_profile_update.php"><button class="btn btn-danger btn-block mb-3 mx-0 rounded-0">
+						<a href=<?php echo $ProfileUpdateUrl; ?>><button class="btn btn-danger btn-block mb-3 mx-0 rounded-0">
 							Update Info
 						</button></a>
 					</div>

@@ -1,5 +1,5 @@
 <?php 
-$jsMain = "lib/js/main.js";
+$jsMain = $rootAdress."lib/js/main.js";
 ?>
 
 
