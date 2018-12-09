@@ -7,7 +7,7 @@ include APP_ROOT.'lib/linker_files/db.php';
 header("Content-Type: application/json; charset=UTF-8");
 $obj = json_decode($_POST["x"], false);
 // echo $obj->email;
-$sql = "UPDATE `user` SET `email`='$obj->email',`mobile`='$obj->mobileNumber',`dob`='$obj->dob' WHERE id=$obj->id";
+$sql = "UPDATE `user` SET `email`='$obj->email',`mobile`='$obj->mobileNumber',`dob`='$obj->dob', `password`='$obj->password'  WHERE id=$obj->id";
 
 
 $statusResult = mysqli_query($conn, $sql);

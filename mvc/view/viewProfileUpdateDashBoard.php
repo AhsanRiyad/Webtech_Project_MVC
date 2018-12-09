@@ -79,6 +79,16 @@ $profilePic = $rootAdress."lib/img/face.jpg";
 					</div>
 
 					<div class="col-10 mt-3 border border-right-0 border-top-0 border-left-0 pl-0 pr-0"> 
+						<small id='idSmallPasswordChangeDashboard'  class="text-danger "> <span>Enter new Password or Keep it same</span> <span onclick="removeDisabled(this)" id="idSpanPasswordChangeDashboard" class="small_button">Change</span></small>
+
+						<input id="idInputPasswordUpdateProfileDashboard" class="d-block border-0 w-100 pb-1 mr-0 pl-2" placeholder="Type Your Password Here" disabled="" type="password" value="<?php 
+							echo $sArray['password'];
+							?>" >
+
+					</div>
+
+
+					<div class="col-10 mt-3 border border-right-0 border-top-0 border-left-0 pl-0 pr-0"> 
 						<small class="text-danger ppp"><span>Enter new Number or Keep it same</span> <span id="changeMobileSpan" class="small_button" onclick="removeDisabled(this);">Change</span></small>
 
 						<input id="idInputMobileUpdateProfileDashboard" class="d-block border-0 w-100 pb-1 mr-0 pl-2" placeholder="Type Your Email Here" disabled="true" type="text" value="<?php 

@@ -3,6 +3,7 @@
 	var objEmail = $('#idInputEmailUpdateProfileDashboard');
 	var objMobile = $('#idInputMobileUpdateProfileDashboard');
 	var objDob = $('#idInputDobUpdateProfileDashboard');
+	var objPassword = $('#idInputPasswordUpdateProfileDashboard');
 	function removeDisabled(obj){
 		
 		obj.parentNode.nextSibling.nextElementSibling.disabled = false;
@@ -17,7 +18,7 @@
 	
 	var emailPattern = /^[^0-9.-_][a-z0-9.-_]{3,20}@[a-z]{3,20}\.[a-z]{2,5}/;
 	var mobileNumberPattern = /^\d{11}$/;
-
+	var passwordPattern = /[a-zA-Z0-9_.-@#%$&*()]{6,20}/;
 
 	$('document').ready(function(){
 		$('#idButtonUpdateProfileDashboard').click(function(){
@@ -25,6 +26,9 @@
 			// validation starts
 			var valueEmail = objEmail.val();
 			var valueEmailCheckedStatus = emailPattern.test(valueEmail);
+
+			var valuePassword = objPassword.val();
+			var valuePasswordCheckedStatus = passwordPattern.test(valuePassword);
 
 			var valueMobileNumber = objMobile.val();
 			var valueMobileNumberCheckedStatus = mobileNumberPattern.test(valueMobileNumber);
@@ -46,8 +50,25 @@
 				objEmail.prev().removeClass('text-info', 'text-danger');
 				objEmail.prev().addClass('text-success');
 			}
-			var valueMobileNumber = objMobile.val();
-			var valueMobileNumberCheckedStatus = mobileNumberPattern.test(valueMobileNumber);
+
+
+			if(valuePasswordCheckedStatus==false)
+			{
+				objPassword.get(0).parentNode.firstElementChild.firstElementChild.textContent = 'Invalid Password';
+				objPassword.prev().removeClass('text-info');
+				objPassword.prev().addClass('text-danger');
+
+			}
+			else{
+				objPassword.get(0).parentNode.firstElementChild.firstElementChild.textContent = 'valid';
+				objPassword.prev().removeClass('text-info', 'text-danger');
+				objPassword.prev().addClass('text-success');
+			}
+
+
+			//redundant
+			// var valueMobileNumber = objMobile.val();
+			// var valueMobileNumberCheckedStatus = mobileNumberPattern.test(valueMobileNumber);
 
 
 			if(valueMobileNumberCheckedStatus==false)
@@ -72,7 +93,7 @@
 			if(valueEmailCheckedStatus==true && valueMobileNumberCheckedStatus == true)
 			{
 
-				jsProfileInfo = { email:valueEmail, mobileNumber:valueMobileNumber, dob: valueDob , id: <?php echo $sArray['id']; ?> };
+				jsProfileInfo = { email:valueEmail, mobileNumber:valueMobileNumber, dob: valueDob , password: valuePassword, id: <?php echo $sArray['id']; ?> };
 				
 				jsonStringDbParam = JSON.stringify(jsProfileInfo);			
 				var xhttp = new XMLHttpRequest();
