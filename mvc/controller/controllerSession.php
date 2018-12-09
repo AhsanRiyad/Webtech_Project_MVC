@@ -2,13 +2,13 @@
 session_start();
 $loginStatus = false;
 
-if(isset($link_status)){
-  if($link_status == $loginStatusVar1)
+if(isset($pageName)){
+  if($pageName == $SessionCheckloginPage)
   {
-    unset($_SESSION[$loginStatusVar2]);
+    unset($_SESSION[$SessionCheckUserInfo]);
   }
 }
-if(isset($_SESSION[$loginStatusVar2]))
+if(isset($_SESSION[$SessionCheckUserInfo]))
 {
   $loginStatus = true;
 }

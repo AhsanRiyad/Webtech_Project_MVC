@@ -8,7 +8,7 @@
 						<p class="text-dark h4" id='msg'>
 							Create Your Umart Account
 						</p>
-						<span class="ml-auto mt-auto pt-3"><small >Alredy member? <a href="login.php">Login</a> here</small></span>
+						<span class="ml-auto mt-auto pt-3"><small >Alredy member? <a href=<?php echo $loginUrl; ?>>Login</a> here</small></span>
 					</div>
 
 					<div class="row justify-content-xl-center bg-white py-5 mb-5">

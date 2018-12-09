@@ -1,12 +1,12 @@
 <?php
 session_start();
-if(!isset($_SESSION['UserInfo']))
+if(!isset($_SESSION[$SessionCheckUserInfo]))
 {
   header('location: alert.php');
 }
 else
 {
-  $sArray = $_SESSION['UserInfo'];
+  $sArray = $_SESSION[$SessionCheckUserInfo];
 }
 
 ?>
