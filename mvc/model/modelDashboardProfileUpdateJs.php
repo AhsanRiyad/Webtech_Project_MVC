@@ -72,15 +72,9 @@
 			if(valueEmailCheckedStatus==true && valueMobileNumberCheckedStatus == true)
 			{
 
-				jsProfileInfo = { email:valueEmail, mobileNumber:valueMobileNumber, dob: valueDob };
+				jsProfileInfo = { email:valueEmail, mobileNumber:valueMobileNumber, dob: valueDob , id: <?php echo $sArray['id']; ?> };
 				
-				jsonStringDbParam = JSON.stringify(jsProfileInfo);
-				
-
-				//dbParam = JSON.stringify(jsProfileInfo);
-				//jsProfileInfo = JSON.parse(jsProfileInfo);
-				
-				
+				jsonStringDbParam = JSON.stringify(jsProfileInfo);			
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function() {
 					if (this.readyState == 4 && this.status == 200) {
