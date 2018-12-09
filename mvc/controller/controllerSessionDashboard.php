@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION[$SessionCheckUserInfo]))
 {
-  header('location: alert.php');
+  header('location: '.$loginUrl);
 }
 else
 {
