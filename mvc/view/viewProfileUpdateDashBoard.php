@@ -70,18 +70,18 @@ $profilePic = $rootAdress."lib/img/face.jpg";
 					</div> -->
 
 					<div class="col-10 mt-3 border border-right-0 border-top-0 border-left-0 pl-0 pr-0"> 
-						<small  class="text-danger ">Enter new email or Keep it same <span onclick="removeDisabled(this)" id="changeEmailSpan" class="small_button">Change</span></small>
+						<small id='idSmallEmailChangeDashboard'  class="text-danger "> <span>Enter new email or Keep it same</span> <span onclick="removeDisabled(this)" id="idSpanEmailChangeDashboard" class="small_button">Change</span></small>
 
-						<input id="changeEmail" class="d-block border-0 w-100 pb-1 mr-0 pl-2" placeholder="Type Your Email Here" disabled="" type="text" value="<?php 
+						<input id="idInputEmailUpdateProfileDashboard" class="d-block border-0 w-100 pb-1 mr-0 pl-2" placeholder="Type Your Email Here" disabled="" type="text" value="<?php 
 							echo $sArray['email'];
 							?>" >
 
 					</div>
 
 					<div class="col-10 mt-3 border border-right-0 border-top-0 border-left-0 pl-0 pr-0"> 
-						<small class="text-danger ppp">Enter new Number or Keep it same <span id="changeMobileSpan" class="small_button" onclick="removeDisabled(this);">Change</span></small>
+						<small class="text-danger ppp"><span>Enter new Number or Keep it same</span> <span id="changeMobileSpan" class="small_button" onclick="removeDisabled(this);">Change</span></small>
 
-						<input id="changeMobile" class="d-block border-0 w-100 pb-1 mr-0 pl-2" placeholder="Type Your Email Here" disabled="true" type="text" value="<?php 
+						<input id="idInputMobileUpdateProfileDashboard" class="d-block border-0 w-100 pb-1 mr-0 pl-2" placeholder="Type Your Email Here" disabled="true" type="text" value="<?php 
 							echo $sArray['mobile'];
 							?>" >
 
@@ -89,9 +89,9 @@ $profilePic = $rootAdress."lib/img/face.jpg";
 
 
 					<div class="col-10 mt-3 border border-right-0 border-top-0 border-left-0 pl-0 pr-0 mb-3"> 
-						<small class="text-danger ">Enter new DOB or Keep it same <span onclick="removeDisabled(this)" id="changeDOBSpan" class="small_button">Change</span></small>
+						<small class="text-danger "><span>Enter new DOB or Keep it same</span> <span onclick="removeDisabled(this)" id="changeDOBSpan" class="small_button">Change</span></small>
 
-						<input id="changeDOB" class="d-block border-0 w-100 pb-1 pl-2 mr-0" placeholder="20-12-1996" disabled="" type="date" value="<?php 
+						<input id="idInputDobUpdateProfileDashboard" class="d-block border-0 w-100 pb-1 pl-2 mr-0" placeholder="20-12-1996" disabled="" type="date" value="<?php 
 							echo $sArray['dob'];
 							?>" >
 
@@ -99,7 +99,7 @@ $profilePic = $rootAdress."lib/img/face.jpg";
 
 
 					<div class="col-10 mx-0 px-0 ">
-						<button id="IdButtonUpdateProfileDashboard" class="btn btn-danger btn-block mb-3 mx-0 rounded-0">
+						<button id="idButtonUpdateProfileDashboard" class="btn btn-danger btn-block mb-3 mx-0 rounded-0">
 							Update Info
 						</button>
 					</div>
