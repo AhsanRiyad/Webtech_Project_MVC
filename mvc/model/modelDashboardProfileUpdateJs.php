@@ -73,25 +73,26 @@
 			{
 
 				var jsProfileInfo = {
-					email : valueEmail,
-					mobileNumber : valueMobileNumber,
-					dob : valueDob
+					'email' : 'valueEmail',
+					'mobileNumber' : 'valueMobileNumber',
+					'dob' : 'valueDob'
 				};
-				jsProfileInfo = JSON.stringify(jsProfileInfo);
-				jsProfileInfo = JSON.parse(jsProfileInfo);
-				alert(jsProfileInfo.email);
-				
-				// var xhttp = new XMLHttpRequest();
-				// xhttp.onreadystatechange = function() {
-				// 	if (this.readyState == 4 && this.status == 200) {
-				// 		var msg = this.responseText;
-				// 		alert(msg);
-				// 	}
-				// };
 
-				// xhttp.open("POST", "http://localhost/webtech_project/Webtech_Project_MVC/mvc/model/modelDashboardProfileUpdate.php", true);
-				// xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-				// xhttp.send(jsProfileInfo);
+				jsProfileInfo = JSON.stringify(jsProfileInfo);
+				//jsProfileInfo = JSON.parse(jsProfileInfo);
+				
+				
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						var msg = this.responseText;
+						alert(msg);
+					}
+				};
+
+				xhttp.open("POST", "http://localhost/webtech_project/Webtech_Project_MVC/mvc/model/modelDashboardProfileUpdate.php", true);
+				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xhttp.send(jsProfileInfo);
 
 
 			}
