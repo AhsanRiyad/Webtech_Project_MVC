@@ -1,5 +1,10 @@
 <?php 
 $logoSrc = APP_ROOT."lib/img/logo.png";
+$indexUrl = $rootAdress."index.php";
+$dashboardHomeUrl = $rootAdress."pages/pagesDashboardHome.php";
+$loginUrl = $rootAdress."pages/pagesLogin.php";
+
+
 
  ?>
 
@@ -32,10 +37,10 @@ $logoSrc = APP_ROOT."lib/img/logo.png";
               </form> 
             </div>
             <div class="col-lg-1  col-3 offset-1 mt-3 mb-3 mb-lg-0 mt-lg-0 offset-lg-0 d-flex justify-content-center align-self-lg-center"><a href="<?php if($loginStatus == true){
-              echo 'admin_home.php';
+              echo $dashboardHomeUrl;
             }
             else{
-              echo 'pages/login.php';
+              echo $loginUrl;
             } ?>" class="btn btn-success">
             <?php 
             if($loginStatus == true){

@@ -1,8 +1,8 @@
 <?php 
 $logoSrc = $rootAdress."lib/img/logo.png";
-$loginUrl = $rootAdress."pages/login.php";
-$registrationUrl = $rootAdress."pages/reg.php";
-$dashBoardUrl = $rootAdress."pages/dashboardHome.php";
+$loginUrl = $rootAdress."pages/pagesLogin.php";
+$registrationUrl = $rootAdress."pages/pagesReg.php";
+$dashBoardUrl = $rootAdress."pages/pagesDashboardHome.php";
 ?>
 
 

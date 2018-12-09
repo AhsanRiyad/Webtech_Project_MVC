@@ -1,7 +1,7 @@
 <?php 
 $logoSrc = $rootAdress."lib/img/logo_dashboard.png";
-$dashboardHomeUrl = $rootAdress."pages/dashboardHome.php";
-$dashboardProfileUrl = $rootAdress."pages/dashboardProfile.php";
+$dashboardHomeUrl = $rootAdress."pages/pagesDashboardHome.php";
+$dashboardProfileUrl = $rootAdress."pages/pagesDashboardProfile.php";
 ?>
 
 <!-- navigation bar and search bar starts -->
@@ -17,7 +17,7 @@ $dashboardProfileUrl = $rootAdress."pages/dashboardProfile.php";
   <!-- fixed vertical -->
   <div class=" admin_navbar_veritcal bg-dark ">
     <div class=" bg-light d-flex justify-content-center">
-      <a href="admin_home.php"><img class=" py-1" src=<?php echo $logoSrc; ?> alt=""></a>
+      <a href=<?php echo $dashboardHomeUrl; ?>><img class=" py-1" src=<?php echo $logoSrc; ?> alt=""></a>
 
     </div>
 
