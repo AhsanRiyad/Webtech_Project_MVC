@@ -1,11 +1,5 @@
 <?php 
 $logoSrc = APP_ROOT."lib/img/logo.png";
-$indexUrl = $rootAdress."index.php";
-$dashboardHomeUrl = $rootAdress."pages/pagesDashboardHome.php";
-$loginUrl = $rootAdress."pages/pagesLogin.php";
-
-
-
  ?>
 
 

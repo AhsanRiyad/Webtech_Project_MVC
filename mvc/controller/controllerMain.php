@@ -3,6 +3,7 @@
 
 include APP_ROOT.'lib/linker_files/headerAllTogether.php';
 include APP_ROOT.'lib/linker_files/db.php';
+include APP_ROOT.'mvc/controller/controllerPagesUrlList.php';
 
 if($pageCategory=='visibleToAll')
 {

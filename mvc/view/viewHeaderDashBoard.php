@@ -1,7 +1,5 @@
 <?php 
 $logoSrc = $rootAdress."lib/img/logo_dashboard.png";
-$dashboardHomeUrl = $rootAdress."pages/pagesDashboardHome.php";
-$dashboardProfileUrl = $rootAdress."pages/pagesDashboardProfile.php";
 ?>
 
 <!-- navigation bar and search bar starts -->

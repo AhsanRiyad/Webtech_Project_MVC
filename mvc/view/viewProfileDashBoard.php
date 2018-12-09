@@ -1,6 +1,5 @@
 <?php 
 $profilePic = $rootAdress."lib/img/face.jpg";
-$ProfileUpdateUrl = $rootAdress."pages/pagesDashboardProfileUpdateInfo.php";
 ?>
 
 <!-- admin breadcumb and title -->
