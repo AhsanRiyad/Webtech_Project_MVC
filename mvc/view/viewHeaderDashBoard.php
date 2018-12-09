@@ -83,7 +83,7 @@ $logoSrc = $rootAdress."lib/img/logo_dashboard.png";
 
             </div></a>
 
-          <a class="text-white" href="index.php">
+          <a class="text-white" href=<?php echo $indexUrl; ?>>
           <div class="  bg-success py-2 text-center my-4">
 
             <i class="fas fa-shopping-cart"></i> Back to Shop Page
