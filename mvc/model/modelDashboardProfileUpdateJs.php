@@ -14,6 +14,7 @@
 	}
 	
 	var emailPattern = /^[^0-9.-_][a-z0-9.-_]{3,20}@[a-z]{3,20}\.[a-z]{2,5}/;
+	var mobileNumberPattern = /^\d{11}$/;
 
 	 
 	$('document').ready(function(){
