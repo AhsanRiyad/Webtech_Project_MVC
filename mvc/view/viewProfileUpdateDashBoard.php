@@ -24,7 +24,7 @@ $profilePic = $rootAdress."lib/img/face.jpg";
 			
 			<!-- update top part starts-->
 			
-			<div class="offset-3 col-4 admin_background px-0 py-1" style="box-shadow: 0 0 10px lightgrey; position: absolute; top:70px;">
+			<div class="offset-3 col-4 admin_background px-0 py-1" style="box-shadow: 0 0 10px lightgrey; position: absolute; top:-10px;">
 
 				
 				<div class="row bg-white mx-1">
