@@ -24,7 +24,7 @@ $profilePic = $rootAdress."lib/img/face.jpg";
 				
 				<div class="row bg-white mx-1">
 
-					<div class="col-5 mr-0 pr-0 my-2">
+					<div class="col-3 mr-0 pr-0 my-2">
 						<img class="rounded img-thumbnail img-fluid" src=<?php echo $profilePic; ?> alt="">
 						<div class="w-100"></div>
 						
@@ -33,7 +33,7 @@ $profilePic = $rootAdress."lib/img/face.jpg";
 
 
 					</div>
-					<div class="col-7 align-self-center ml-0">
+					<div class="col-9 align-self-center ml-0">
 						<p class="h3 ">
 							<?php 
 							echo $sArray['firstName'].' '.$sArray['lastName'];
