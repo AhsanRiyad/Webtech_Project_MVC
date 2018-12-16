@@ -13,9 +13,8 @@
 					{
 					?>
 
-
 					<div class="col-xl-2 col-6  mt-xl-2 mt-3" >
-						<div onclick="location.href='product_details.php';" class="w_p bg-white ">
+						<div onclick="location.href='<?php echo $indexPageProductDetailsUrl; ?>';" class="w_p bg-white ">
 							<img class="img-fluid" src="lib/img/cat1.jpg" alt="">
 
 							<div class="w-100 pl-2">

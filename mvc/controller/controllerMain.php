@@ -27,6 +27,12 @@ if($pageName == 'registration')
 	include APP_ROOT.'mvc/controller/controllerReg.php';
 	include APP_ROOT.'lib/linker_files/footerAllTogether.php';
 }
+if($pageName == 'indexProductDetails')
+{
+	include APP_ROOT.'mvc/view/viewCssRegistration.php';
+	include APP_ROOT.'mvc/controller/controllerIndexProductDetails.php';
+	include APP_ROOT.'lib/linker_files/footerAllTogether.php';
+}
 }
 
 
@@ -44,7 +50,7 @@ if($pageName == 'dashboardHome')
 }
 if($pageName == 'dashboardProfile')
 {
-	include APP_ROOT.'mvc/view/viewCssDashboardProfile.php';
+	include APP_ROOT.'mvc/view/viewCssIndexProductDetails.php';
 	include APP_ROOT.'mvc/controller/controllerProfileDashboard.php';
 	include APP_ROOT.'lib/linker_files/linkerJs.php';
 }

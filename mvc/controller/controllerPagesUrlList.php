@@ -11,7 +11,10 @@ $ProfileUpdateUrl = $rootAdress."pages/pagesDashboardProfileUpdateInfo.php";
 
 // index pages header
 $indexUrl = $rootAdress."index.php";
+$indexPageProductDetailsUrl = $rootAdress."pages/pagesIndexProductDetails.php?productId=";
 //$dashboardHomeUrl = $rootAdress."pages/pagesDashboardHome.php";
 //$loginUrl = $rootAdress."pages/pagesLogin.php";
+
+$indexProductImageUrl = $rootAdress."lib/img/cat1.jpg";
 
  ?>
