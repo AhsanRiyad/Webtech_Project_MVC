@@ -8,7 +8,7 @@ header("Content-Type: application/json; charset=UTF-8");
 $obj = json_decode($_POST["x"], false);
 // echo $obj->email;
 
-$sql = "INSERT INTO `cart`(`productId`, `quantity`, `userId`) VALUES ('$obj->productId','$obj->quantity','$obj->email')";
+$sql = "INSERT INTO `cart`(`productId`, `quantity`, `userId` , `price`, `productName`, `descripition`) VALUES ('$obj->productId','$obj->quantity','$obj->email' , '$obj->price' , '$obj->productName' , '$obj->description' )";
 
 $statusResult = mysqli_query($conn, $sql);
 
