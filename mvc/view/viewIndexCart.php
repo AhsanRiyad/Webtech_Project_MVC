@@ -1,5 +1,52 @@
+<?php  
+	$userId = "makaium33@gmail.com";
 
-ggjhggjgj
+	
+	$hostName = 'localhost';
+	$userName = 'root';
+	$password = '';
+	$databaseName = 'webtech';
+	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
+
+	$sql1 = "SELECT `productName`, `description`, `productId`, `quantity` FROM `cart` WHERE `userId` = '$userId'";
+
+	//$sql2 = "SELECT `productId` FROM `cart` WHERE `userId` = '$userId'";
+
+
+	//echo $sql;
+	$productIdQuantity = mysqli_query($conn,$sql1);
+		
+
+	echo "<table border='1'>
+	<tr>
+	<th>Name</th>
+	<th>Description</th>
+	<th>Quantity</th>
+	<th>Price</th>
+	</tr>";
+
+	$totalPrice = 0;
+
+	while($row = mysqli_fetch_assoc($productIdQuantity)){
+		echo "<tr>";
+		echo "<td>" . $row['productName'] . "</td>";
+		echo "<td>" . $row['description'] . "</td>";
+		echo "<td>" . $row['quantity'] . "</td>";
+		$price = $row['quantity'] * $row['price'];
+		echo "<td>" . $price . "</td>";
+
+		$totalPrice = $totalPrice + $price;
+		echo "</tr>";
+	}
+	echo "<tr>";
+	echo "<td colspan=4>" . $totalPrice . "</td>";
+	echo "</tr>";
+
+	echo "</table>";
+
+	mysqli_close($conn);
+	
+?>
 
 
 <div class="container">
