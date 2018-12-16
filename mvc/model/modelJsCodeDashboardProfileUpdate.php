@@ -104,7 +104,15 @@
 					}
 				};
 
-				xhttp.open("POST", "http://localhost/webtech_project/Webtech_Project_MVC/mvc/model/modelDashboardProfileUpdate.php", true);
+				<?php 
+
+
+				$ajaxUrlProductUpdate = $rootAdress."mvc/model/modelDashboardProfileUpdate.php";
+
+
+				 ?>
+
+				xhttp.open("POST", "<?php echo $ajaxUrlProductUpdate; ?>", true);
 				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				xhttp.send('x=' + jsonStringDbParam);
 

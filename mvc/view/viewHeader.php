@@ -59,9 +59,9 @@ $logoSrc = $rootAdress."lib/img/logo.png";
               echo $registrationUrl;
 
             } ?>" class="btn btn-danger">
-              <?php 
+              <?php $productCart= 4;
             if($loginStatus == true){
-              echo 'Cart'.'<span class="badge badge-light">4</span>';
+              echo 'Cart'."<span class='badge badge-light' id='idIndexCartQuantity'>".$productCart."</span>";
             }
             else{
               echo 'Register';

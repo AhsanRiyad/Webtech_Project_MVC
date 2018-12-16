@@ -62,6 +62,12 @@ if($pageName == 'dashboardProfile')
 	include APP_ROOT.'mvc/controller/controllerProfileDashboard.php';
 	include APP_ROOT.'lib/linker_files/linkerJs.php';
 }
+if($pageName == 'addProductBySeller')
+{
+	include APP_ROOT.'mvc/view/viewCssAddProductBySeller.php';
+	include APP_ROOT.'mvc/controller/controllerAddProductBySeller.php';
+	include APP_ROOT.'lib/linker_files/linkerJs.php';
+}
 if($pageName == 'dashboardProfileUpdate')
 {
 	include APP_ROOT.'mvc/view/viewCssDashboardProfileUpdate.php';
