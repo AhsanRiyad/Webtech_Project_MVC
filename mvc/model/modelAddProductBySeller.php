@@ -66,18 +66,13 @@
 		}else{
 		 	$date = date("Y-m-d");
 
-		 	$hostName = 'localhost';
-			$userName = 'root';
-			$password = '';
-			$databaseName = 'webtech';
-		 	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
 
 		 	$sql = "INSERT INTO `product`(`isbn`, `sellerId`, `name`, `price`, `category`, `total`, `description`, `date`) VALUES ('$isbn','$sellerId','$name',$price,'$category',$quantity,'$description','$date')";
 
 		 	//echo $sql;
 		 	mysqli_query($conn,$sql);
 		 	//$conn->query($sql);
-
+		 	
 		 	mysqli_close($conn);
 		}
 	}

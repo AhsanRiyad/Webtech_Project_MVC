@@ -1,4 +1,4 @@
-<form method='post' action='#'>
+<form class="classFormAddProductBySeller" method='post' action='#'>
 		<table width="500px" align="center">
 			<tr>
 				<td width="100px"><b>ISBN</b></td>
