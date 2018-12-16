@@ -52,7 +52,7 @@ $logoSrc = $rootAdress."lib/img/logo.png";
 
           <div class=" col-lg-1 col-3 mt-3 mb-3 mb-lg-0 mt-lg-0 d-flex justify-content-center align-self-lg-center">
             <a href="<?php if($loginStatus == true){
-              echo 'cart.php';
+              echo $indexCartPageUrl;
             }
             else{
               unset($_SESSION['UserInfo']);

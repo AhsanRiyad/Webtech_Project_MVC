@@ -1,53 +1,15 @@
-<?php  
-	$userId = "makaium33@gmail.com";
+<?php 
+$sArray = $_SESSION[$SessionCheckUserInfo];	
+$email = $sArray['email'];
+$sql = "SELECT * FROM `cart` WHERE userId='$email'";
 
-	
-	$hostName = 'localhost';
-	$userName = 'root';
-	$password = '';
-	$databaseName = 'webtech';
-	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
+$result = mysqli_query($conn, $sql);
 
-	$sql1 = "SELECT `productName`, `description`, `productId`, `quantity` FROM `cart` WHERE `userId` = '$userId'";
+mysqli_close($conn);
 
-	//$sql2 = "SELECT `productId` FROM `cart` WHERE `userId` = '$userId'";
-
-
-	//echo $sql;
-	$productIdQuantity = mysqli_query($conn,$sql1);
-		
-
-	echo "<table border='1'>
-	<tr>
-	<th>Name</th>
-	<th>Description</th>
-	<th>Quantity</th>
-	<th>Price</th>
-	</tr>";
-
-	$totalPrice = 0;
-
-	while($row = mysqli_fetch_assoc($productIdQuantity)){
-		echo "<tr>";
-		echo "<td>" . $row['productName'] . "</td>";
-		echo "<td>" . $row['description'] . "</td>";
-		echo "<td>" . $row['quantity'] . "</td>";
-		$price = $row['quantity'] * $row['price'];
-		echo "<td>" . $price . "</td>";
-
-		$totalPrice = $totalPrice + $price;
-		echo "</tr>";
-	}
-	echo "<tr>";
-	echo "<td colspan=4>" . $totalPrice . "</td>";
-	echo "</tr>";
-
-	echo "</table>";
-
-	mysqli_close($conn);
-	
+$i = 0;
+$totalPrice = 0;
 ?>
-
 
 <div class="container">
 	<table class="table">
@@ -62,41 +24,104 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<th scope="row">1</th>
+
+			<?php 
+			while($row = mysqli_fetch_assoc($result)){
+
+				$i++;
+				$totalPrice += $row['price']*$row['quantity'];
+
+				?>
+
+				<tr>
+					<th scope="row"><?php echo $i; ?></th>
+
+					<td><?php echo $row['productName']; ?></td>
+					<td><?php echo $row['descripition']; ?></td>
+					<td><?php echo $row['quantity']; ?></td>
+					<td><?php echo $row['price']*$row['quantity']; ?></td>
+				</tr>
+
 				
-				<td>iPhone</td>
-				<td>Apple's iPhone imported from USA</td>
-				<td>1</td>
-				<td>60000</td>
-			</tr>
-			<tr>
-				<th scope="row">2</th>
-				
-				<td>iPhone</td>
-				<td>Apple's iPhone imported from USA</td>
-				<td>1</td>
-				<td>60000</td>
-			</tr>
-			<tr>
-				<th scope="row">3</th>
-				<td>iPhone</td>
-				<td>Apple's iPhone imported from USA</td>
-				<td>1</td>
-				<td>60000</td>
-			</tr>
-	
+
+
+
+			<?php }
+			?>
+
 			<tr>
 				<th scope="row"></th>
 				<td></td>
 				<td></td>
 				<td>Total Amount:</td>
-				<td>180000</td>
+				<td><?php echo $totalPrice; ?></td>
+				
+
 			</tr>
+
+
 		</tbody>
 	</table>
 	
 	<hr>
-	<a href="checkout.php" class="btn btn-warning">Proceed To Checkout</a>
-	<a href="index.php" class="btn btn-info">Continue Shopping</a>
+	<a href="<?php echo $indexUrl; ?>" class="btn btn-warning text-white">Confirm</a>
+	<a href="<?php echo $indexUrl; ?>" class="btn btn-info">Continue Shopping</a>
 </div>
+
+
+
+
+
+<?php 
+	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
+	
+	$sArray = $_SESSION[$SessionCheckUserInfo];	
+	$date = date("Y-m-d H:i:s");
+	
+	$email = $sArray['email'];
+	$sql = "INSERT INTO `orderproduct`( `orderDate`, `orderStatus`, `userId`) VALUES ('$date','pending','$email')";
+	
+	$result = mysqli_query($conn, $sql);
+	mysqli_close($conn);
+
+
+	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
+
+	$date = $date.'.000000';
+
+	$sql = "SELECT `orderId`, `orderDate`, `orderStatus`, `userId` FROM `orderproduct` WHERE userId='$email' and orderDate='$date'";
+	//echo $sql;
+
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	mysqli_close($conn);
+	$orderId = $row['orderId'];
+	echo $orderId;
+	
+	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
+
+
+
+
+	// $sql = "INSERT INTO `contains`( `orderId`, `productId`, `perProductQuantity`, `sellerId`) VALUES ($orderId , $productId, $perProductQuantity , '$sellerId')";
+
+
+?>
+
+<script>
+	
+
+
+
+		
+
+
+
+	jsProfileInfo = {   orderDate: '<?php echo $date ?>' ,  orderStatus: 'pending' , userId: '<?php echo $sArray['email'] ?>' };
+
+
+
+	jsonStringDbParam = JSON.stringify(jsProfileInfo);
+
+
+</script>
