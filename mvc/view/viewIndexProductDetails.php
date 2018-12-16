@@ -11,11 +11,49 @@
 			{
 				echo "<h6 class='text-danger'>Please log in to buy</h6>";
 			} ?></h6>
+			
+			<b>Quantity:  </b>
 
-			<a href="#" class="btn btn-success mb-3 <?php if($loginStatus == false)
+
+
+			<select class="px-4 disabled" <?php if($loginStatus == false)
+			{
+				echo 'disabled bg-danger';
+			} ?> name="productQuantity">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+		</select>
+
+		<div>
+			<a onclick="jsFuntionAddToCart(this)" href="#" class="btn btn-success mb-3 mt-2 <?php if($loginStatus == false)
 			{
 				echo 'disabled bg-danger';
 			} ?>" >Add to Cart</a>
 		</div>
 	</div>
 </div>
+</div>
+
+
+<script>
+
+	var x = document.getElementsByName("productQuantity");
+	var qntity = x[0].value;
+	
+
+	function jsFuntionAddToCart(event){
+
+		<?php 
+		$userInfo = $_SESSION[$SessionCheckUserInfo];	
+		?>
+
+		
+		
+	}
+
+
+
+
+</script>

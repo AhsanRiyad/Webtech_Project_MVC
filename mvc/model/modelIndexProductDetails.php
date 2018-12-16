@@ -10,7 +10,5 @@ mysqli_close($conn);
 $row = mysqli_fetch_assoc($result);
 $idHolder;
 $i = 0;
-echo $row['name'];
-
 
 ?>
