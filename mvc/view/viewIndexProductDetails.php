@@ -39,11 +39,13 @@
 
 <script>
 
-	var x = document.getElementsByName("productQuantity");
-	var quantity = x[0].value;
 	
 
 	function jsFuntionAddToCart(event){
+
+		var x = document.getElementsByName("productQuantity");
+		var quantity = x[0].value;
+
 
 		<?php 
 		$sArray = $_SESSION[$SessionCheckUserInfo];	
@@ -51,22 +53,31 @@
 
 
 
-		jsProfileInfo = {  userId: <?php echo $sArray['id']; ?> , qunatity: quantity , productId : <?php echo $id; ?> };
+		jsProfileInfo = {  email: '<?php echo $sArray['email']; ?>' , quantity: quantity , productId : <?php echo $id; ?> };
 
 		jsonStringDbParam = JSON.stringify(jsProfileInfo);	
 
-
+		console.log(jsonStringDbParam);
 
 
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
-				var msg = this.responseText;
-				alert(msg);
+				var myObj = JSON.parse(this.responseText);
+				alert(myObj[0]);
+				var obj = document.getElementById('idIndexCartQuantity');
+				obj.innerHTML = myObj[0];
+
 			}
 		};
 
-		xhttp.open("POST", "http://localhost/webtech_project/Webtech_Project_MVC/mvc/model/modelAjaxIndexAddToCart.php", true);
+		<?php 
+		$ajaxUrlProductCart = $rootAdress."mvc/model/modelAjaxIndexAddToCart.php";
+		?>
+
+		
+
+		xhttp.open("POST", "<?php  echo $ajaxUrlProductCart; ?>", true);
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xhttp.send('x=' + jsonStringDbParam);
 
