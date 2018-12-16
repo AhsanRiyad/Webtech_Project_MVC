@@ -33,6 +33,14 @@ if($pageName == 'indexProductDetails')
 	include APP_ROOT.'mvc/controller/controllerIndexProductDetails.php';
 	include APP_ROOT.'lib/linker_files/footerAllTogether.php';
 }
+if($pageName == 'IndexCart')
+{
+	include APP_ROOT.'mvc/view/viewCssIndexCart.php';
+	include APP_ROOT.'mvc/controller/controllerIndexCart.php';
+	include APP_ROOT.'lib/linker_files/footerAllTogether.php';
+}
+
+
 }
 
 

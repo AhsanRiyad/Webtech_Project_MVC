@@ -40,20 +40,40 @@
 <script>
 
 	var x = document.getElementsByName("productQuantity");
-	var qntity = x[0].value;
+	var quantity = x[0].value;
 	
 
 	function jsFuntionAddToCart(event){
 
 		<?php 
-		$userInfo = $_SESSION[$SessionCheckUserInfo];	
+		$sArray = $_SESSION[$SessionCheckUserInfo];	
 		?>
 
-		
-		
+
+
+		jsProfileInfo = {  userId: <?php echo $sArray['id']; ?> , qunatity: quantity , productId : <?php echo $id; ?> };
+
+		jsonStringDbParam = JSON.stringify(jsProfileInfo);	
+
+
+
+
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var msg = this.responseText;
+				alert(msg);
+			}
+		};
+
+		xhttp.open("POST", "http://localhost/webtech_project/Webtech_Project_MVC/mvc/model/modelAjaxIndexAddToCart.php", true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send('x=' + jsonStringDbParam);
+
+
+
+
 	}
-
-
 
 
 </script>
