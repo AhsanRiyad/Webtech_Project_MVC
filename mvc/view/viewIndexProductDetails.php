@@ -6,7 +6,16 @@
 			<h3>Name: <?php echo $row['name']; ?></h3>
 			<h4>Price: <?php echo $row['price']; ?></h4>
 			<h5>Description: <?php echo $row['description']; ?></h5>
-			<a href="#" class="btn btn-success mb-3">Add to Cart</a>
+
+			<h6><?php if($loginStatus == false)
+			{
+				echo "<h6 class='text-danger'>Please log in to buy</h6>";
+			} ?></h6>
+
+			<a href="#" class="btn btn-success mb-3 <?php if($loginStatus == false)
+			{
+				echo 'disabled bg-danger';
+			} ?>" >Add to Cart</a>
 		</div>
 	</div>
 </div>
