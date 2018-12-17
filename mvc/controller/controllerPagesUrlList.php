@@ -8,6 +8,7 @@ $registrationUrl = $rootAdress."pages/pagesReg.php";
 $dashboardHomeUrl = $rootAdress."pages/pagesDashboardHome.php";
 $dashboardProfileUrl = $rootAdress."pages/pagesDashboardProfile.php";
 $ProfileUpdateUrl = $rootAdress."pages/pagesDashboardProfileUpdateInfo.php";
+$addProductBySellerUrl = $rootAdress."pages/pagesAddProductBySeller.php";
 
 // index pages header
 $indexUrl = $rootAdress."index.php";

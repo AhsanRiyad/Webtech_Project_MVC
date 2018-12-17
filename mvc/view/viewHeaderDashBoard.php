@@ -66,6 +66,25 @@ $logoSrc = $rootAdress."lib/img/logo_dashboard.png";
           <i class="fas w_f fa-user"></i> Profile
 
         </div></a>
+        
+        
+        <a class="text-light" href=<?php echo $addProductBySellerUrl; ?>>
+          <div class="  
+          <?php 
+
+          if($pageName=='addProductBySeller')
+          {
+            echo 'bg-info';
+          }
+          else{
+            echo 'bg-secondary';
+          }
+          ?> 
+          py-2 text-center my-4">
+
+          <i class="fas fa-shopping-cart"></i> Add Product
+
+        </div></a>
 
 
         <a class="text-white" href="#">
