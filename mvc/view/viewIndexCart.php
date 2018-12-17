@@ -1,6 +1,12 @@
-
-ggjhggjgj
-
+<?php 
+$sArray = $_SESSION[$SessionCheckUserInfo];	
+$email = $sArray['email'];
+$sql = "SELECT * FROM `cart` WHERE userId='$email'";
+$result = mysqli_query($conn, $sql);
+mysqli_close($conn);
+$i = 0;
+$totalPrice = 0;
+?>
 
 <div class="container">
 	<table class="table">
@@ -15,41 +21,44 @@ ggjhggjgj
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<th scope="row">1</th>
+
+			<?php 
+			while($row = mysqli_fetch_assoc($result)){
+				$i++;
+				$totalPrice += $row['price']*$row['quantity'];
+				?>
+
+				<tr>
+					<th scope="row"><?php echo $i; ?></th>
+
+					<td><?php echo $row['productName']; ?></td>
+					<td><?php echo $row['descripition']; ?></td>
+					<td><?php echo $row['quantity']; ?></td>
+					<td><?php echo $row['price']*$row['quantity']; ?></td>
+				</tr>
+
 				
-				<td>iPhone</td>
-				<td>Apple's iPhone imported from USA</td>
-				<td>1</td>
-				<td>60000</td>
-			</tr>
-			<tr>
-				<th scope="row">2</th>
-				
-				<td>iPhone</td>
-				<td>Apple's iPhone imported from USA</td>
-				<td>1</td>
-				<td>60000</td>
-			</tr>
-			<tr>
-				<th scope="row">3</th>
-				<td>iPhone</td>
-				<td>Apple's iPhone imported from USA</td>
-				<td>1</td>
-				<td>60000</td>
-			</tr>
-	
+
+
+
+			<?php }
+			?>
+
 			<tr>
 				<th scope="row"></th>
 				<td></td>
 				<td></td>
 				<td>Total Amount:</td>
-				<td>180000</td>
+				<td><?php echo $totalPrice; ?></td>
+				
+
 			</tr>
+
+
 		</tbody>
 	</table>
 	
 	<hr>
-	<a href="checkout.php" class="btn btn-warning">Proceed To Checkout</a>
-	<a href="index.php" class="btn btn-info">Continue Shopping</a>
+	<a href="<?php echo $indexUrl; ?>" class="btn btn-warning text-white">Confirm</a>
+	<a href="<?php echo $indexUrl; ?>" class="btn btn-info">Continue Shopping</a>
 </div>
