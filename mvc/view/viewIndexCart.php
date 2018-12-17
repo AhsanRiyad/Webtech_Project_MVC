@@ -6,6 +6,16 @@ $result = mysqli_query($conn, $sql);
 mysqli_close($conn);
 $i = 0;
 $totalPrice = 0;
+
+
+
+
+
+
+
+
+
+
 ?>
 
 <div class="container">
@@ -59,7 +69,7 @@ $totalPrice = 0;
 	</table>
 	
 	<hr>
-	<a  id="idButtonIndexPageConfirmOrder" href="<?php echo $indexUrl; ?>" class="btn btn-warning text-white">Confirm</a>
+	<a href="confirmOrder.php" class="text-dark btn btn-warning">Confirm Order</a>
 	<a href="<?php echo $indexUrl; ?>" class="btn btn-info">Continue Shopping</a>
 </div>
 
@@ -67,6 +77,9 @@ $totalPrice = 0;
 
 
 <?php 
+
+
+
 $conn = mysqli_connect($hostName, $userName, $password , $databaseName);
 
 $sArray = $_SESSION[$SessionCheckUserInfo];	
@@ -113,12 +126,7 @@ $orderId = $row['orderId'];
 
 
 		mysqli_query($conn, $sql);
-
-
-
-		
-
-		
+	
 	}
 
 
@@ -127,7 +135,9 @@ $orderId = $row['orderId'];
 
 
 
-	?>
+
+
+?>
 
 
 
