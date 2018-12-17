@@ -12,7 +12,6 @@ $ProfileUpdateUrl = $rootAdress."pages/pagesDashboardProfileUpdateInfo.php";
 // index pages header
 $indexUrl = $rootAdress."index.php";
 $indexPageProductDetailsUrl = $rootAdress."pages/pagesIndexProductDetails.php?productId=";
-$indexCartPageUrl = $rootAdress."pages/pagesIndexCart.php";
 //$dashboardHomeUrl = $rootAdress."pages/pagesDashboardHome.php";
 //$loginUrl = $rootAdress."pages/pagesLogin.php";
 

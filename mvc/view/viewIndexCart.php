@@ -1,15 +1,6 @@
-<?php 
-$sArray = $_SESSION[$SessionCheckUserInfo];	
-$email = $sArray['email'];
-$sql = "SELECT * FROM `cart` WHERE userId='$email'";
 
-$result = mysqli_query($conn, $sql);
+ggjhggjgj
 
-mysqli_close($conn);
-
-$i = 0;
-$totalPrice = 0;
-?>
 
 <div class="container">
 	<table class="table">
@@ -24,104 +15,41 @@ $totalPrice = 0;
 			</tr>
 		</thead>
 		<tbody>
-
-			<?php 
-			while($row = mysqli_fetch_assoc($result)){
-
-				$i++;
-				$totalPrice += $row['price']*$row['quantity'];
-
-				?>
-
-				<tr>
-					<th scope="row"><?php echo $i; ?></th>
-
-					<td><?php echo $row['productName']; ?></td>
-					<td><?php echo $row['descripition']; ?></td>
-					<td><?php echo $row['quantity']; ?></td>
-					<td><?php echo $row['price']*$row['quantity']; ?></td>
-				</tr>
-
+			<tr>
+				<th scope="row">1</th>
 				
-
-
-
-			<?php }
-			?>
-
+				<td>iPhone</td>
+				<td>Apple's iPhone imported from USA</td>
+				<td>1</td>
+				<td>60000</td>
+			</tr>
+			<tr>
+				<th scope="row">2</th>
+				
+				<td>iPhone</td>
+				<td>Apple's iPhone imported from USA</td>
+				<td>1</td>
+				<td>60000</td>
+			</tr>
+			<tr>
+				<th scope="row">3</th>
+				<td>iPhone</td>
+				<td>Apple's iPhone imported from USA</td>
+				<td>1</td>
+				<td>60000</td>
+			</tr>
+	
 			<tr>
 				<th scope="row"></th>
 				<td></td>
 				<td></td>
 				<td>Total Amount:</td>
-				<td><?php echo $totalPrice; ?></td>
-				
-
+				<td>180000</td>
 			</tr>
-
-
 		</tbody>
 	</table>
 	
 	<hr>
-	<a href="<?php echo $indexUrl; ?>" class="btn btn-warning text-white">Confirm</a>
-	<a href="<?php echo $indexUrl; ?>" class="btn btn-info">Continue Shopping</a>
+	<a href="checkout.php" class="btn btn-warning">Proceed To Checkout</a>
+	<a href="index.php" class="btn btn-info">Continue Shopping</a>
 </div>
-
-
-
-
-
-<?php 
-	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
-	
-	$sArray = $_SESSION[$SessionCheckUserInfo];	
-	$date = date("Y-m-d H:i:s");
-	
-	$email = $sArray['email'];
-	$sql = "INSERT INTO `orderproduct`( `orderDate`, `orderStatus`, `userId`) VALUES ('$date','pending','$email')";
-	
-	$result = mysqli_query($conn, $sql);
-	mysqli_close($conn);
-
-
-	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
-
-	$date = $date.'.000000';
-
-	$sql = "SELECT `orderId`, `orderDate`, `orderStatus`, `userId` FROM `orderproduct` WHERE userId='$email' and orderDate='$date'";
-	//echo $sql;
-
-	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_assoc($result);
-	mysqli_close($conn);
-	$orderId = $row['orderId'];
-	echo $orderId;
-	
-	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
-
-
-
-
-	// $sql = "INSERT INTO `contains`( `orderId`, `productId`, `perProductQuantity`, `sellerId`) VALUES ($orderId , $productId, $perProductQuantity , '$sellerId')";
-
-
-?>
-
-<script>
-	
-
-
-
-		
-
-
-
-	jsProfileInfo = {   orderDate: '<?php echo $date ?>' ,  orderStatus: 'pending' , userId: '<?php echo $sArray['email'] ?>' };
-
-
-
-	jsonStringDbParam = JSON.stringify(jsProfileInfo);
-
-
-</script>

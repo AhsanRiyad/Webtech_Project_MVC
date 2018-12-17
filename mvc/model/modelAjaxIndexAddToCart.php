@@ -14,7 +14,7 @@ $statusResult = mysqli_query($conn, $sql);
 
 $sql = "SELECT * FROM `cart` WHERE userId= '$obj->email'";
 $result = mysqli_query($conn, $sql);
-$i = -1;
+$i = 0;
 while($row = mysqli_fetch_assoc($result)){
 	$i++;
 }

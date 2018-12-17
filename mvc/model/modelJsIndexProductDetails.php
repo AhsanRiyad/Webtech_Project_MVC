@@ -25,7 +25,7 @@
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				var myObj = JSON.parse(this.responseText);
-				alert(myObj[0]);
+				alert('Added to Cart');
 				var obj = document.getElementById('idIndexCartQuantity');
 				obj.innerHTML = myObj[0];
 
