@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
 	$row = mysqli_fetch_assoc($result);
 	mysqli_close($conn);
 	$orderId = $row['orderId'];
-	echo $orderId; //var1
+	
 
 	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
 
