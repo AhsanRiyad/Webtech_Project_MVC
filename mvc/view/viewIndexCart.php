@@ -4,10 +4,9 @@ $email = $sArray['email'];
 $sql = "SELECT * FROM `cart` WHERE userId='$email'";
 $result = mysqli_query($conn, $sql);
 mysqli_close($conn);
-$i = 0;
+$productCart = 0;
 $totalPrice = 0;
 ?>
-
 <?php 
 
 if (isset($_POST['submit'])) {	
@@ -43,26 +42,14 @@ if (isset($_POST['submit'])) {
 		$quantity = $row['quantity'];
 		$sellerId = $row['sellerId'];
 		$email=$sArray['email'];
-
-
 		$sql = "INSERT INTO `contains`(`orderId`, `productId`, `perProductQuantity`, `sellerId`, `userId`) VALUES ($orderId,$productId,$quantity,'$sellerId','$email')";
-
-
 		mysqli_query($conn, $sql);
-
 	}	
 	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
 	$sql = "DELETE FROM `cart` WHERE `userId`='$email'";
 	mysqli_query($conn, $sql);
 }
-
 ?>
-
-
-
-
-
-
 
 <div class="container">
 	
@@ -89,18 +76,21 @@ if (isset($_POST['submit'])) {
 
 			<?php 
 			while($row = mysqli_fetch_assoc($result)){
-				$i++;
+				$productCart++;
 				$totalPrice += $row['price']*$row['quantity'];
 				?>
 				<tr>
-					<th scope="row"><?php echo $i; ?></th>
+					<th scope="row"><?php echo $productCart; ?></th>
 
 					<td><?php echo $row['productName']; ?></td>
 					<td><?php echo $row['descripition']; ?></td>
 					<td><?php echo $row['quantity']; ?></td>
 					<td><?php echo $row['price']*$row['quantity']; ?></td>
 				</tr>
+				<?php 
 
+			}
+			?>
 				<tr>
 					<th scope="row"></th>
 					<td></td>
@@ -111,19 +101,16 @@ if (isset($_POST['submit'])) {
 
 				</tr>
 				
-				<?php 
-
-			}
-			?>
+				
 
 		</tbody>
 	</table>
 
 	<hr>
-	<?php if($i<1){ echo  "<h6 class='text-danger'>please add some products to cart to buy.
+	<?php if($productCart<1){ echo  "<h6 class='text-danger'>please add some products to cart to buy.
 		</h6>"; } ?>
 	<form action="#" method="post">
-		<input <?php if($i<1){ echo 'disabled'; } ?>
+		<input <?php if($productCart<1){ echo 'disabled'; } ?>
 		 href="confirmOrder.php" class="text-dark btn btn-warning" type="submit" value="confirm order" name="submit">
 	</form>
 	<a href="<?php echo $indexUrl; ?>" class="btn btn-info">Continue Shopping</a>

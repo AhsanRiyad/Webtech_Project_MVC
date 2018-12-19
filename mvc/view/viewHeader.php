@@ -1,5 +1,12 @@
 <?php 
 $logoSrc = $rootAdress."lib/img/logo.png";
+$productCart= 0;
+$sql = "SELECT * FROM `cart` WHERE userId='riyad298@gmail.com'";
+$result = mysqli_query($conn, $sql);
+while ($row = mysqli_fetch_assoc($result)) {
+  $productCart++;
+}
+
 ?>
 
 
@@ -59,7 +66,7 @@ $logoSrc = $rootAdress."lib/img/logo.png";
               echo $registrationUrl;
 
             } ?>" class="btn btn-danger">
-              <?php $productCart= 4;
+              <?php 
             if($loginStatus == true){
               echo 'Cart'."<span class='badge badge-light' id='idIndexCartQuantity'>".$productCart."</span>";
             }
