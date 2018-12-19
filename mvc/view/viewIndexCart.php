@@ -7,18 +7,24 @@ mysqli_close($conn);
 $i = 0;
 $totalPrice = 0;
 
-
-
-
-
-
-
-
-
-
 ?>
 
 <div class="container">
+	
+	<?php 
+	if(isset($_POST['submit']))
+	{
+		echo  "<h3 class='text-success'>Congratz! your order is confirmed! <br>
+		nohting to display in the cart.
+		</h3>";
+	}
+	?>
+
+
+
+	
+	
+
 	<table class="table">
 		<thead class="thead-dark">
 			<tr>
@@ -37,7 +43,6 @@ $totalPrice = 0;
 				$i++;
 				$totalPrice += $row['price']*$row['quantity'];
 				?>
-
 				<tr>
 					<th scope="row"><?php echo $i; ?></th>
 
@@ -47,30 +52,30 @@ $totalPrice = 0;
 					<td><?php echo $row['price']*$row['quantity']; ?></td>
 				</tr>
 
+				<tr>
+					<th scope="row"></th>
+					<td></td>
+					<td></td>
+					<td>Total Amount:</td>
+					<td><?php echo $totalPrice; ?></td>
+
+
+				</tr>
 				
+				<?php 
 
-
-
-			<?php }
+			}
 			?>
-
-			<tr>
-				<th scope="row"></th>
-				<td></td>
-				<td></td>
-				<td>Total Amount:</td>
-				<td><?php echo $totalPrice; ?></td>
-				
-
-			</tr>
-
 
 		</tbody>
 	</table>
-	
+
 	<hr>
+	<?php if($i<1){ echo  "<h6 class='text-danger'>please add some products to cart to buy.
+		</h6>"; } ?>
 	<form action="#" method="post">
-		<input href="confirmOrder.php" class="text-dark btn btn-warning" type="submit" value="confirm order" name="submit">
+		<input <?php if($i<1){ echo 'disabled'; } ?>
+		 href="confirmOrder.php" class="text-dark btn btn-warning" type="submit" value="confirm order" name="submit">
 	</form>
 	<a href="<?php echo $indexUrl; ?>" class="btn btn-info">Continue Shopping</a>
 </div>
@@ -98,19 +103,17 @@ if (isset($_POST['submit'])) {
 	$orderId = $row['orderId'];
 	echo $orderId; //var1
 
-
-
-
-
 	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
 
 	$sql = "SELECT * FROM `cart` WHERE userId='$email'";
 	$result = mysqli_query($conn, $sql);
 	mysqli_close($conn);
 
-	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
 
+
+	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
 	
+
 
 	while($row = mysqli_fetch_assoc($result)){
 
@@ -132,11 +135,7 @@ if (isset($_POST['submit'])) {
 	$sql = "DELETE FROM `cart` WHERE `userId`='$email'";
 
 	mysqli_query($conn, $sql);
-	
-	
-
 }
-
 
 ?>
 
