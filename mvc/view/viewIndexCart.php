@@ -29,9 +29,7 @@ if (isset($_POST['submit'])) {
 	mysqli_close($conn);
 	$orderId = $row['orderId'];
 	
-
 	$conn = mysqli_connect($hostName, $userName, $password , $databaseName);
-
 	$sql = "SELECT * FROM `cart` WHERE userId='$email'";
 	$result = mysqli_query($conn, $sql);
 	mysqli_close($conn);
