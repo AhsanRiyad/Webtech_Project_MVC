@@ -1,5 +1,5 @@
 <?php 
-$rootAdress = 'http://localhost/webtech_project/Webtech_Project_MVC/';
+$rootAdress = 'http://localhost/Webtech_Project_MVC/';
 
 $bootstrapLib = $rootAdress."lib/css/bootstrap.min.css";
 $stylesheet =  $rootAdress."lib/css/main.css";

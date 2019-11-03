@@ -1,3 +1,3 @@
 <?php 
-$rootAdress = 'http://localhost/webtech_project/Webtech_Project_MVC/';
+$rootAdress = 'http://localhost/Webtech_Project_MVC/';
 ?>
